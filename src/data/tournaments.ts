@@ -6,6 +6,7 @@ export interface Tournament {
   description: string;
   highlights: string[];
   status: "completed" | "upcoming";
+  registrationLink?: string;
 }
 
 export const tournaments: Tournament[] = [
@@ -60,5 +61,47 @@ export const tournaments: Tournament[] = [
       "Perfect score – undefeated throughout",
     ],
     status: "completed",
+  },
+  {
+    id: "chess-kenya-open-2025",
+    name: "Chess Kenya National Open 2025",
+    date: "August 16–17, 2025",
+    location: "Nairobi, Kenya",
+    description: "The premier national open tournament bringing together top players from across Kenya. A great opportunity for MFA players to test their skills against seasoned competitors.",
+    highlights: [
+      "Open to all rated and unrated players",
+      "FIDE-rated tournament",
+      "Cash prizes for top finishers",
+    ],
+    status: "upcoming",
+    registrationLink: "https://chesskenya.co.ke",
+  },
+  {
+    id: "eac-open-2026",
+    name: "4th Jumuiya ya Afrika Mashariki Open Chess Tournament",
+    date: "2026 (Date TBA)",
+    location: "East Africa (Venue TBA)",
+    description: "The next edition of the prestigious East African regional tournament. MFA will be looking to defend their Best School/Club title.",
+    highlights: [
+      "Defending Best School/Club Trophy",
+      "East African regional competition",
+      "Registration opens soon",
+    ],
+    status: "upcoming",
+    registrationLink: "https://chesskenya.co.ke",
+  },
+  {
+    id: "kiambu-regionals-2026",
+    name: "Kiambu County Regional Chess Qualifiers 2026",
+    date: "March 2026 (Date TBA)",
+    location: "Kiambu County, Kenya",
+    description: "The regional qualifiers that serve as the gateway to the national championships. MFA aims to repeat the historic 100% qualification rate.",
+    highlights: [
+      "Pathway to National Championships",
+      "Open to all Kiambu County schools",
+      "Team and individual categories",
+    ],
+    status: "upcoming",
+    registrationLink: "https://chesskenya.co.ke",
   },
 ];
