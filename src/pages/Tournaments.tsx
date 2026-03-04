@@ -1,5 +1,5 @@
 import { motion } from "framer-motion";
-import { Calendar, MapPin, CheckCircle, Clock } from "lucide-react";
+import { Calendar, MapPin, CheckCircle, Clock, ExternalLink } from "lucide-react";
 import Layout from "@/components/Layout";
 import { tournaments } from "@/data/tournaments";
 
