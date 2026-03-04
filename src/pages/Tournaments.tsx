@@ -4,21 +4,11 @@ import Layout from "@/components/Layout";
 import { tournaments } from "@/data/tournaments";
 
 const TournamentsPage = () => {
-  return (
-    <Layout>
-      <section className="py-16 chess-pattern min-h-screen">
-        <div className="container mx-auto px-4">
-          <motion.div initial={{ opacity: 0, y: 20 }} animate={{ opacity: 1, y: 0 }} className="text-center mb-12">
-            <h1 className="font-display text-4xl md:text-5xl font-bold text-foreground mb-3">
-              Tournament <span className="text-gold-gradient">History</span>
-            </h1>
-            <p className="text-muted-foreground max-w-lg mx-auto">
-              A chronicle of our proud chess journey and victories
-            </p>
-          </motion.div>
+  const completed = tournaments.filter((t) => t.status === "completed");
+  const upcoming = tournaments.filter((t) => t.status === "upcoming");
 
-          <div className="max-w-3xl mx-auto space-y-6">
-            {tournaments.map((t, i) => (
+  const renderTimeline = (items: typeof tournaments) =>
+    items.map((t, i) => (
               <motion.div
                 key={t.id}
                 initial={{ opacity: 0, x: -20 }}
