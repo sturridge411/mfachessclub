@@ -6,6 +6,7 @@ export interface Tournament {
   description: string;
   highlights: string[];
   status: "completed" | "upcoming";
+  registrationLink?: string;
 }
 
 export const tournaments: Tournament[] = [
