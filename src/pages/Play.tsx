@@ -5,10 +5,7 @@ import Layout from "@/components/Layout";
 
 const platforms = [
   { name: "ChessFriends", url: "https://chessfriends.com" },
-  { name: "365Chess", url: "https://www.365chess.com" },
   { name: "Chessly", url: "https://www.chessly.com" },
-  { name: "Chessable", url: "https://www.chessable.com" },
-  { name: "ChessBase", url: "https://www.chessbase.com" },
 ];
 
 const Play = () => {

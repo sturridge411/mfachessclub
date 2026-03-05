@@ -6,10 +6,7 @@ import heroImage from "@/assets/hero-chess.jpg";
 
 const chessplatforms = [
   { name: "ChessFriends", desc: "Play chess online with friends in real-time" },
-  { name: "365Chess", desc: "Massive game database & online play" },
   { name: "Chessly", desc: "Personalized chess training with GM courses" },
-  { name: "Chessable", desc: "Science-based chess learning platform" },
-  { name: "ChessBase", desc: "News, analysis tools & game databases" },
 ];
 
 const newsItems = [
