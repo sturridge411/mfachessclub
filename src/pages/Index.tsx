@@ -5,11 +5,11 @@ import Layout from "@/components/Layout";
 import heroImage from "@/assets/hero-chess.jpg";
 
 const chessplatforms = [
-  { name: "ChessFriends", url: "https://chessfriends.com", desc: "Play chess online with friends in real-time" },
-  { name: "365Chess", url: "https://www.365chess.com", desc: "Massive game database & online play" },
-  { name: "Chessly", url: "https://www.chessly.com", desc: "Personalized chess training with GM courses" },
-  { name: "Chessable", url: "https://www.chessable.com", desc: "Science-based chess learning platform" },
-  { name: "ChessBase", url: "https://www.chessbase.com", desc: "News, analysis tools & game databases" },
+  { name: "ChessFriends", desc: "Play chess online with friends in real-time" },
+  { name: "365Chess", desc: "Massive game database & online play" },
+  { name: "Chessly", desc: "Personalized chess training with GM courses" },
+  { name: "Chessable", desc: "Science-based chess learning platform" },
+  { name: "ChessBase", desc: "News, analysis tools & game databases" },
 ];
 
 const newsItems = [
@@ -201,26 +201,28 @@ const Index = () => {
 
           <div className="grid grid-cols-1 sm:grid-cols-2 lg:grid-cols-3 gap-6 max-w-4xl mx-auto">
             {chessplatforms.map((platform, i) => (
-              <motion.a
+              <motion.div
                 key={platform.name}
-                href={platform.url}
-                target="_blank"
-                rel="noopener noreferrer"
                 initial={{ opacity: 0, y: 20 }}
                 whileInView={{ opacity: 1, y: 0 }}
                 viewport={{ once: true }}
                 transition={{ delay: i * 0.1 }}
                 className="group p-6 rounded-lg border border-border bg-card hover:border-gold/40 hover:shadow-lg transition-all"
               >
-                <div className="flex items-center justify-between mb-3">
-                  <h3 className="font-display text-lg font-bold text-foreground group-hover:text-gold transition-colors">
-                    {platform.name}
-                  </h3>
-                  <ExternalLink size={16} className="text-muted-foreground group-hover:text-gold transition-colors" />
-                </div>
+                <h3 className="font-display text-lg font-bold text-foreground group-hover:text-gold transition-colors mb-2">
+                  {platform.name}
+                </h3>
                 <p className="text-sm text-muted-foreground leading-relaxed">{platform.desc}</p>
-              </motion.a>
+              </motion.div>
             ))}
+          </div>
+          <div className="text-center mt-8">
+            <Link
+              to="/play"
+              className="inline-flex items-center gap-2 px-6 py-3 rounded-md gold-gradient text-chess-dark font-semibold text-sm hover:opacity-90 transition-opacity"
+            >
+              <Gamepad2 size={16} /> Open Chess Platforms
+            </Link>
           </div>
         </div>
       </section>
