@@ -1,8 +1,16 @@
 import { Link } from "react-router-dom";
 import { motion } from "framer-motion";
-import { Users, Calendar, Mail, Trophy, Award, Star } from "lucide-react";
+import { Users, Calendar, Mail, Trophy, Award, Star, ExternalLink, Gamepad2 } from "lucide-react";
 import Layout from "@/components/Layout";
 import heroImage from "@/assets/hero-chess.jpg";
+
+const chessplatforms = [
+  { name: "ChessFriends", url: "https://chessfriends.com", desc: "Play chess online with friends in real-time" },
+  { name: "365Chess", url: "https://www.365chess.com", desc: "Massive game database & online play" },
+  { name: "Chessly", url: "https://www.chessly.com", desc: "Personalized chess training with GM courses" },
+  { name: "Chessable", url: "https://www.chessable.com", desc: "Science-based chess learning platform" },
+  { name: "ChessBase", url: "https://www.chessbase.com", desc: "News, analysis tools & game databases" },
+];
 
 const newsItems = [
   "🏆 MFA wins Best School/Club Trophy at Jumuiya ya Afrika Mashariki Open 2025!",
