@@ -1,8 +1,16 @@
 import { Link } from "react-router-dom";
 import { motion } from "framer-motion";
-import { Users, Calendar, Mail, Trophy, Award, Star } from "lucide-react";
+import { Users, Calendar, Mail, Trophy, Award, Star, ExternalLink, Gamepad2 } from "lucide-react";
 import Layout from "@/components/Layout";
 import heroImage from "@/assets/hero-chess.jpg";
+
+const chessplatforms = [
+  { name: "ChessFriends", url: "https://chessfriends.com", desc: "Play chess online with friends in real-time" },
+  { name: "365Chess", url: "https://www.365chess.com", desc: "Massive game database & online play" },
+  { name: "Chessly", url: "https://www.chessly.com", desc: "Personalized chess training with GM courses" },
+  { name: "Chessable", url: "https://www.chessable.com", desc: "Science-based chess learning platform" },
+  { name: "ChessBase", url: "https://www.chessbase.com", desc: "News, analysis tools & game databases" },
+];
 
 const newsItems = [
   "🏆 MFA wins Best School/Club Trophy at Jumuiya ya Afrika Mashariki Open 2025!",
@@ -165,6 +173,53 @@ const Index = () => {
                 <h3 className="font-display text-lg font-bold text-foreground mb-2">{highlight.title}</h3>
                 <p className="text-sm text-muted-foreground leading-relaxed">{highlight.desc}</p>
               </motion.div>
+            ))}
+          </div>
+        </div>
+      </section>
+
+      {/* Play Chess */}
+      <section className="py-20 chess-pattern">
+        <div className="container mx-auto px-4">
+          <motion.div
+            initial={{ opacity: 0 }}
+            whileInView={{ opacity: 1 }}
+            viewport={{ once: true }}
+            className="text-center mb-12"
+          >
+            <div className="inline-flex items-center gap-2 px-4 py-1.5 rounded-full border border-gold/30 bg-gold/10 mb-4">
+              <Gamepad2 size={14} className="text-gold" />
+              <span className="text-gold text-xs font-semibold uppercase tracking-wider">Play & Learn</span>
+            </div>
+            <h2 className="font-display text-3xl md:text-4xl font-bold text-foreground mb-3">
+              Play <span className="text-gold-gradient">Chess Online</span>
+            </h2>
+            <p className="text-muted-foreground max-w-xl mx-auto">
+              Sharpen your skills on the best chess platforms used by our members
+            </p>
+          </motion.div>
+
+          <div className="grid grid-cols-1 sm:grid-cols-2 lg:grid-cols-3 gap-6 max-w-4xl mx-auto">
+            {chessplatforms.map((platform, i) => (
+              <motion.a
+                key={platform.name}
+                href={platform.url}
+                target="_blank"
+                rel="noopener noreferrer"
+                initial={{ opacity: 0, y: 20 }}
+                whileInView={{ opacity: 1, y: 0 }}
+                viewport={{ once: true }}
+                transition={{ delay: i * 0.1 }}
+                className="group p-6 rounded-lg border border-border bg-card hover:border-gold/40 hover:shadow-lg transition-all"
+              >
+                <div className="flex items-center justify-between mb-3">
+                  <h3 className="font-display text-lg font-bold text-foreground group-hover:text-gold transition-colors">
+                    {platform.name}
+                  </h3>
+                  <ExternalLink size={16} className="text-muted-foreground group-hover:text-gold transition-colors" />
+                </div>
+                <p className="text-sm text-muted-foreground leading-relaxed">{platform.desc}</p>
+              </motion.a>
             ))}
           </div>
         </div>
