@@ -48,16 +48,18 @@ const Play = () => {
           </div>
 
           {/* Iframe */}
-          <div className="rounded-lg border border-border overflow-hidden bg-card" style={{ height: "80vh" }}>
-            <iframe
-              key={platforms[active].url}
-              src={platforms[active].url}
-              title={platforms[active].name}
-              className="w-full h-full border-0"
-              sandbox="allow-scripts allow-same-origin allow-popups allow-forms allow-popups-to-escape-sandbox"
-              loading="lazy"
-            />
-          </div>
+          {platforms[active] ? (
+            <div className="rounded-lg border border-border overflow-hidden bg-card" style={{ height: "80vh" }}>
+              <iframe
+                key={platforms[active].url}
+                src={platforms[active].url}
+                title={platforms[active].name}
+                className="w-full h-full border-0"
+                sandbox="allow-scripts allow-same-origin allow-popups allow-forms allow-popups-to-escape-sandbox"
+                loading="lazy"
+              />
+            </div>
+          ) : null}
         </div>
       </section>
     </Layout>
