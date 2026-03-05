@@ -8,6 +8,7 @@ import Members from "./pages/Members";
 import Tournaments from "./pages/Tournaments";
 import About from "./pages/About";
 import Contact from "./pages/Contact";
+import Play from "./pages/Play";
 import NotFound from "./pages/NotFound";
 
 const queryClient = new QueryClient();
