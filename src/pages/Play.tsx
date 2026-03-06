@@ -5,6 +5,7 @@ import Layout from "@/components/Layout";
 
 const platforms = [
   { name: "ChessFriends", url: "https://chessfriends.com" },
+  { name: "Chess.co", url: "https://chess.co" },
   { name: "Chessly", url: "https://www.chessly.com" },
 ];
 
