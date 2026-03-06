@@ -15,9 +15,9 @@ const MembersPage = () => {
   );
 
   const getPlacementBadge = (member: typeof members[0]) => {
-    if (member.points === "4/4") return { color: "bg-gold text-chess-dark", label: "🥇 Champion" };
-    if (member.position === 2) return { color: "bg-gold/80 text-chess-dark", label: "🥈 1st Runners Up" };
-    if (member.position === 3) return { color: "bg-gold/60 text-chess-dark", label: "🥉 2nd Runners Up" };
+    if (member.achievements.some(a => a.includes("1st Place"))) return { color: "bg-gold text-chess-dark", label: "🥇 Champion" };
+    if (member.achievements.some(a => a.includes("1st Runners Up"))) return { color: "bg-gold/80 text-chess-dark", label: "🥈 1st Runners Up" };
+    if (member.achievements.some(a => a.includes("2nd Runners Up"))) return { color: "bg-gold/60 text-chess-dark", label: "🥉 2nd Runners Up" };
     return null;
   };
 
