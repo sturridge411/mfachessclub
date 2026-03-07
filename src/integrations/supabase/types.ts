@@ -14,7 +14,30 @@ export type Database = {
   }
   public: {
     Tables: {
-      [_ in never]: never
+      player_submissions: {
+        Row: {
+          approved: boolean
+          elo: string
+          id: string
+          name: string
+          submitted_at: string
+        }
+        Insert: {
+          approved?: boolean
+          elo?: string
+          id?: string
+          name: string
+          submitted_at?: string
+        }
+        Update: {
+          approved?: boolean
+          elo?: string
+          id?: string
+          name?: string
+          submitted_at?: string
+        }
+        Relationships: []
+      }
     }
     Views: {
       [_ in never]: never

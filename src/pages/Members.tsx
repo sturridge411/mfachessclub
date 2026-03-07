@@ -1,12 +1,17 @@
 import { useState } from "react";
 import { motion, AnimatePresence } from "framer-motion";
-import { Search, ChevronDown, ChevronUp, Trophy, Medal } from "lucide-react";
+import { Search, ChevronDown, ChevronUp, Trophy, Medal, UserPlus, Send } from "lucide-react";
 import Layout from "@/components/Layout";
 import { members } from "@/data/members";
+import { supabase } from "@/integrations/supabase/client";
+import { toast } from "sonner";
 
 const MembersPage = () => {
   const [search, setSearch] = useState("");
   const [expandedId, setExpandedId] = useState<string | null>(null);
+  const [newName, setNewName] = useState("");
+  const [newElo, setNewElo] = useState("");
+  const [submitting, setSubmitting] = useState(false);
 
   const filtered = members.filter(
     (m) =>
@@ -14,11 +19,32 @@ const MembersPage = () => {
       m.achievements.some((a) => a.toLowerCase().includes(search.toLowerCase()))
   );
 
-  const getPlacementBadge = (member: typeof members[0]) => {
-    if (member.achievements.some(a => a.includes("1st Place"))) return { color: "bg-gold text-chess-dark", label: "🥇 Champion" };
-    if (member.achievements.some(a => a.includes("1st Runners Up"))) return { color: "bg-gold/80 text-chess-dark", label: "🥈 1st Runners Up" };
-    if (member.achievements.some(a => a.includes("2nd Runners Up"))) return { color: "bg-gold/60 text-chess-dark", label: "🥉 2nd Runners Up" };
-    return null;
+  const handleSubmit = async (e: React.FormEvent) => {
+    e.preventDefault();
+    const trimmedName = newName.trim();
+    const trimmedElo = newElo.trim() || "Unrated";
+
+    if (!trimmedName || trimmedName.length < 2 || trimmedName.length > 100) {
+      toast.error("Please enter a valid name (2–100 characters).");
+      return;
+    }
+    if (trimmedElo !== "Unrated" && (isNaN(Number(trimmedElo)) || Number(trimmedElo) < 0 || Number(trimmedElo) > 3500)) {
+      toast.error("Please enter a valid ELO (0–3500) or leave blank.");
+      return;
+    }
+
+    setSubmitting(true);
+    const { error } = await supabase.from("player_submissions").insert({ name: trimmedName, elo: trimmedElo });
+    setSubmitting(false);
+
+    if (error) {
+      toast.error("Something went wrong. Please try again.");
+      return;
+    }
+
+    toast.success("Submitted! Your name will appear once approved by the admin.");
+    setNewName("");
+    setNewElo("");
   };
 
   return (
@@ -51,7 +77,6 @@ const MembersPage = () => {
           {/* Grid */}
           <div className="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 gap-5">
             {filtered.map((member, i) => {
-              const badge = getPlacementBadge(member);
               const isExpanded = expandedId === member.id;
 
               return (
@@ -65,7 +90,6 @@ const MembersPage = () => {
                   <div className="p-5">
                     <div className="flex items-start justify-between mb-3">
                       <div className="flex items-center gap-3">
-                        {/* Avatar */}
                         <div className="w-12 h-12 rounded-full bg-primary flex items-center justify-center text-primary-foreground font-display font-bold text-lg group-hover:bg-gold group-hover:text-chess-dark transition-colors">
                           {member.name.split(" ").map((n) => n[0]).join("")}
                         </div>
@@ -74,11 +98,6 @@ const MembersPage = () => {
                           <span className="text-xs text-muted-foreground">ELO: {member.elo}</span>
                         </div>
                       </div>
-                      {badge && (
-                        <span className={`text-xs font-bold px-2 py-1 rounded-full ${badge.color}`}>
-                          {badge.label}
-                        </span>
-                      )}
                     </div>
 
                     {/* Achievements */}
@@ -132,6 +151,54 @@ const MembersPage = () => {
           {filtered.length === 0 && (
             <p className="text-center text-muted-foreground mt-10">No members found matching "{search}"</p>
           )}
+
+          {/* New Player Registration */}
+          <motion.div
+            initial={{ opacity: 0, y: 30 }}
+            animate={{ opacity: 1, y: 0 }}
+            transition={{ delay: 0.3 }}
+            className="mt-16 max-w-lg mx-auto"
+          >
+            <div className="rounded-lg border border-border bg-card p-6">
+              <div className="flex items-center gap-3 mb-4">
+                <div className="w-10 h-10 rounded-full bg-gold/20 flex items-center justify-center">
+                  <UserPlus size={20} className="text-gold" />
+                </div>
+                <div>
+                  <h2 className="font-display font-bold text-foreground text-lg">Join the Club</h2>
+                  <p className="text-xs text-muted-foreground">New player? Submit your name to get recognised</p>
+                </div>
+              </div>
+
+              <form onSubmit={handleSubmit} className="space-y-3">
+                <input
+                  type="text"
+                  placeholder="Your full name"
+                  value={newName}
+                  onChange={(e) => setNewName(e.target.value)}
+                  maxLength={100}
+                  className="w-full px-4 py-3 rounded-lg border border-border bg-background text-foreground placeholder:text-muted-foreground focus:outline-none focus:ring-2 focus:ring-gold/50 transition"
+                  required
+                />
+                <input
+                  type="text"
+                  placeholder="ELO rating (leave blank if unrated)"
+                  value={newElo}
+                  onChange={(e) => setNewElo(e.target.value)}
+                  maxLength={4}
+                  className="w-full px-4 py-3 rounded-lg border border-border bg-background text-foreground placeholder:text-muted-foreground focus:outline-none focus:ring-2 focus:ring-gold/50 transition"
+                />
+                <button
+                  type="submit"
+                  disabled={submitting}
+                  className="w-full flex items-center justify-center gap-2 px-4 py-3 rounded-lg bg-gold text-chess-dark font-bold hover:bg-gold-light transition-colors disabled:opacity-50"
+                >
+                  <Send size={16} />
+                  {submitting ? "Submitting..." : "Submit"}
+                </button>
+              </form>
+            </div>
+          </motion.div>
         </div>
       </section>
     </Layout>
