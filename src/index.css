@@ -88,8 +88,27 @@
   }
 
   body {
-    @apply bg-background text-foreground;
+    @apply text-foreground;
     font-family: var(--font-body);
+    background-image: url('/mfa-campus-bg.jpg');
+    background-size: cover;
+    background-position: center;
+    background-attachment: fixed;
+    background-repeat: no-repeat;
+  }
+
+  body::before {
+    content: '';
+    position: fixed;
+    inset: 0;
+    background: hsl(var(--background) / 0.82);
+    pointer-events: none;
+    z-index: 0;
+  }
+
+  #root {
+    position: relative;
+    z-index: 1;
   }
 
   h1, h2, h3, h4, h5, h6 {
@@ -110,7 +129,7 @@
     content: '';
     position: absolute;
     inset: 0;
-    background: hsl(var(--background) / 0.88);
+    background: hsl(var(--background) / 0.7);
     pointer-events: none;
   }
 
