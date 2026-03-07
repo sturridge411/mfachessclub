@@ -10,6 +10,102 @@ export interface Tournament {
 }
 
 export const tournaments: Tournament[] = [
+  // ===== UPCOMING (from 1700chess.sh - Season 2026) =====
+  {
+    id: "kisumu-open-2026",
+    name: "Kisumu Open 2026",
+    date: "March 7–8, 2026",
+    location: "Jalaram Academy, Milimani, Kisumu",
+    description: "A 6-round open tournament in Kisumu bringing together players from across the Lake Region.",
+    highlights: [
+      "6 rounds",
+      "Open to all players",
+      "Registration open now",
+    ],
+    status: "upcoming",
+    registrationLink: "https://forms.gle/gqHvBQ1ohFJ5jnEM7",
+  },
+  {
+    id: "mavens-open-2026",
+    name: "Mavens Open 2026",
+    date: "March 19–22, 2026",
+    location: "Delegates Lounge, KICC, Nairobi",
+    description: "An 8-round premier tournament hosted at the iconic KICC in Nairobi.",
+    highlights: [
+      "8 rounds",
+      "KICC venue, Nairobi",
+      "Major national event",
+    ],
+    status: "upcoming",
+    registrationLink: "https://mavens.co.ke/event/register/16",
+  },
+  {
+    id: "kenya-open-2026",
+    name: "Kenya Open 2026",
+    date: "April 3–6, 2026",
+    location: "TBA, Kenya",
+    description: "The premier national open tournament — 8 rounds of competitive chess featuring Kenya's best players.",
+    highlights: [
+      "8 rounds",
+      "FIDE-rated tournament",
+      "Top national competition",
+    ],
+    status: "upcoming",
+  },
+  {
+    id: "sataranji-africa-2026",
+    name: "Sataranji Africa Chess Festival 2026",
+    date: "April 18–19, 2026",
+    location: "TBA, Kenya",
+    description: "A chess festival celebrating African chess culture with 6 rounds of exciting play.",
+    highlights: [
+      "6 rounds",
+      "African chess celebration",
+      "Open to all",
+    ],
+    status: "upcoming",
+  },
+  {
+    id: "kiambu-open-2026",
+    name: "Kiambu Open 2026",
+    date: "May 9–10, 2026",
+    location: "Rainbow Ruiru Resort, Ruiru",
+    description: "A regional open tournament in Kiambu County — home turf for MFA players.",
+    highlights: [
+      "Kiambu County event",
+      "Rainbow Ruiru Resort venue",
+      "TBC",
+    ],
+    status: "upcoming",
+  },
+  {
+    id: "jumuiya-open-2026",
+    name: "Jumuiya Open 2026",
+    date: "September 19–20, 2026",
+    location: "TBA, East Africa",
+    description: "The next edition of the prestigious East African regional tournament. MFA will be looking to defend their Best School/Club title.",
+    highlights: [
+      "Defending Best School/Club Trophy",
+      "East African regional competition",
+      "Details TBC",
+    ],
+    status: "upcoming",
+  },
+
+  // ===== COMPLETED =====
+  {
+    id: "chess-kenya-open-2025",
+    name: "Chess Kenya National Open 2025",
+    date: "August 16–17, 2025",
+    location: "Nairobi, Kenya",
+    description: "The premier national open tournament bringing together top players from across Kenya.",
+    highlights: [
+      "Open to all rated and unrated players",
+      "FIDE-rated tournament",
+      "Cash prizes for top finishers",
+    ],
+    status: "completed",
+  },
   {
     id: "jumuiya-2025",
     name: "3rd Jumuiya ya Afrika Mashariki Open Chess Tournament",
@@ -61,47 +157,5 @@ export const tournaments: Tournament[] = [
       "Perfect score – undefeated throughout",
     ],
     status: "completed",
-  },
-  {
-    id: "chess-kenya-open-2025",
-    name: "Chess Kenya National Open 2025",
-    date: "August 16–17, 2025",
-    location: "Nairobi, Kenya",
-    description: "The premier national open tournament bringing together top players from across Kenya. A great opportunity for MFA players to test their skills against seasoned competitors.",
-    highlights: [
-      "Open to all rated and unrated players",
-      "FIDE-rated tournament",
-      "Cash prizes for top finishers",
-    ],
-    status: "upcoming",
-    registrationLink: "https://chesskenya.co.ke",
-  },
-  {
-    id: "eac-open-2026",
-    name: "4th Jumuiya ya Afrika Mashariki Open Chess Tournament",
-    date: "2026 (Date TBA)",
-    location: "East Africa (Venue TBA)",
-    description: "The next edition of the prestigious East African regional tournament. MFA will be looking to defend their Best School/Club title.",
-    highlights: [
-      "Defending Best School/Club Trophy",
-      "East African regional competition",
-      "Registration opens soon",
-    ],
-    status: "upcoming",
-    registrationLink: "https://chesskenya.co.ke",
-  },
-  {
-    id: "kiambu-regionals-2026",
-    name: "Kiambu County Regional Chess Qualifiers 2026",
-    date: "March 2026 (Date TBA)",
-    location: "Kiambu County, Kenya",
-    description: "The regional qualifiers that serve as the gateway to the national championships. MFA aims to repeat the historic 100% qualification rate.",
-    highlights: [
-      "Pathway to National Championships",
-      "Open to all Kiambu County schools",
-      "Team and individual categories",
-    ],
-    status: "upcoming",
-    registrationLink: "https://chesskenya.co.ke",
   },
 ];
