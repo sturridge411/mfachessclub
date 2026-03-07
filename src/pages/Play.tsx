@@ -4,7 +4,7 @@ import { Gamepad2 } from "lucide-react";
 import Layout from "@/components/Layout";
 
 const platforms = [
-  { name: "SCC Hub", url: "https://scchub.lovable.app" },
+  { name: "Chess Friends", url: "https://chessfriends.com" },
 ];
 
 const Play = () => {
