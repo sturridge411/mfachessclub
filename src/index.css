@@ -99,13 +99,24 @@
 
 @layer components {
   .chess-pattern {
-    background-image:
-      linear-gradient(45deg, hsl(var(--chess-dark) / 0.05) 25%, transparent 25%),
-      linear-gradient(-45deg, hsl(var(--chess-dark) / 0.05) 25%, transparent 25%),
-      linear-gradient(45deg, transparent 75%, hsl(var(--chess-dark) / 0.05) 75%),
-      linear-gradient(-45deg, transparent 75%, hsl(var(--chess-dark) / 0.05) 75%);
-    background-size: 40px 40px;
-    background-position: 0 0, 0 20px, 20px -20px, -20px 0px;
+    position: relative;
+    background-image: url('/mfa-campus-bg.jpg');
+    background-size: cover;
+    background-position: center;
+    background-attachment: fixed;
+  }
+
+  .chess-pattern::before {
+    content: '';
+    position: absolute;
+    inset: 0;
+    background: hsl(var(--background) / 0.88);
+    pointer-events: none;
+  }
+
+  .chess-pattern > * {
+    position: relative;
+    z-index: 1;
   }
 
   .gold-gradient {
