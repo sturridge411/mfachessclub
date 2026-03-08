@@ -74,7 +74,7 @@ export const members: Member[] = [
   },
   {
     id: "sylvia-mario",
-    name: "Sylvia Mario",
+    name: "Marioo Sylvia",
     elo: "1310",
     tournaments: ["National Chess Championship"],
     achievements: ["Qualified for National Chess Championship"],
