@@ -1,6 +1,6 @@
-import { useState } from "react";
+import { useState, useRef, useCallback } from "react";
 import { motion } from "framer-motion";
-import { Gamepad2 } from "lucide-react";
+import { Gamepad2, Maximize, Minimize } from "lucide-react";
 import Layout from "@/components/Layout";
 
 const platforms = [
@@ -10,6 +10,25 @@ const platforms = [
 
 const Play = () => {
   const [active, setActive] = useState(0);
+  const [isFullscreen, setIsFullscreen] = useState(false);
+  const iframeContainerRef = useRef<HTMLDivElement>(null);
+
+  const toggleFullscreen = useCallback(() => {
+    if (!iframeContainerRef.current) return;
+
+    if (!document.fullscreenElement) {
+      iframeContainerRef.current.requestFullscreen().then(() => setIsFullscreen(true)).catch(() => {});
+    } else {
+      document.exitFullscreen().then(() => setIsFullscreen(false)).catch(() => {});
+    }
+  }, []);
+
+  // Listen for fullscreen exit via Esc key
+  useState(() => {
+    const handler = () => setIsFullscreen(!!document.fullscreenElement);
+    document.addEventListener("fullscreenchange", handler);
+    return () => document.removeEventListener("fullscreenchange", handler);
+  });
 
   return (
     <Layout>
@@ -30,8 +49,8 @@ const Play = () => {
             <p className="text-muted-foreground">Select a platform below and start playing</p>
           </motion.div>
 
-          {/* Tabs */}
-          <div className="flex flex-wrap justify-center gap-2 mb-6">
+          {/* Tabs + Fullscreen */}
+          <div className="flex flex-wrap items-center justify-center gap-2 mb-6">
             {platforms.map((p, i) => (
               <button
                 key={p.name}
@@ -45,17 +64,30 @@ const Play = () => {
                 {p.name}
               </button>
             ))}
+            <button
+              onClick={toggleFullscreen}
+              className="ml-2 inline-flex items-center gap-1.5 px-3 py-2 rounded-md border border-border text-muted-foreground hover:text-gold hover:border-gold/40 text-sm font-semibold transition-colors"
+              title={isFullscreen ? "Exit Fullscreen" : "Fullscreen"}
+            >
+              {isFullscreen ? <Minimize size={14} /> : <Maximize size={14} />}
+              {isFullscreen ? "Exit" : "Fullscreen"}
+            </button>
           </div>
 
           {/* Iframe */}
           {platforms[active] ? (
-            <div className="rounded-lg border border-border overflow-hidden bg-card" style={{ height: "80vh" }}>
+            <div
+              ref={iframeContainerRef}
+              className="rounded-lg border border-border overflow-hidden bg-card"
+              style={{ height: isFullscreen ? "100vh" : "80vh" }}
+            >
               <iframe
                 key={platforms[active].url}
                 src={platforms[active].url}
                 title={platforms[active].name}
                 className="w-full h-full border-0"
                 sandbox="allow-scripts allow-same-origin allow-popups allow-forms allow-popups-to-escape-sandbox"
+                allowFullScreen
                 loading="lazy"
               />
             </div>
