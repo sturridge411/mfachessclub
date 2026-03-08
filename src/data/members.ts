@@ -41,6 +41,14 @@ export const members: Member[] = [
     bio: "A versatile player who combines strategic depth with creative play. Joseph's qualification for nationals showcases his growing talent.",
   },
   {
+    id: "king-david-amani",
+    name: "King David Amani",
+    elo: "1515",
+    tournaments: ["Jumuiya ya Afrika Mashariki Open Chess Tournament 2025 (3rd Edition)"],
+    achievements: ["Chess Presidency Semifinalist"],
+    bio: "A strategic thinker with a calm demeanor, King David brings composure and precision to every game.",
+  },
+  {
     id: "maina-jaycrack",
     name: "Maina Jaycrack",
     elo: "1425",
