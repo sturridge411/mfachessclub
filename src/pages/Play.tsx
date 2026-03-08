@@ -1,4 +1,4 @@
-import { useState, useRef, useCallback } from "react";
+import { useState, useRef, useCallback, useEffect } from "react";
 import { motion } from "framer-motion";
 import { Gamepad2, Maximize, Minimize } from "lucide-react";
 import Layout from "@/components/Layout";
