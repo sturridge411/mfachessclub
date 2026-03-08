@@ -23,12 +23,11 @@ const Play = () => {
     }
   }, []);
 
-  // Listen for fullscreen exit via Esc key
-  useState(() => {
+  useEffect(() => {
     const handler = () => setIsFullscreen(!!document.fullscreenElement);
     document.addEventListener("fullscreenchange", handler);
     return () => document.removeEventListener("fullscreenchange", handler);
-  });
+  }, []);
 
   return (
     <Layout>
