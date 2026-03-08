@@ -74,7 +74,7 @@ export const members: Member[] = [
   },
   {
     id: "sylvia-mario",
-    name: "Sylvia Mario",
+    name: "Marioo Sylvia",
     elo: "1310",
     tournaments: ["National Chess Championship"],
     achievements: ["Qualified for National Chess Championship"],
@@ -87,5 +87,13 @@ export const members: Member[] = [
     tournaments: ["Jumuiya ya Afrika Mashariki Open Chess Tournament 2025 (3rd Edition)"],
     achievements: ["Rising Talent"],
     bio: "A rising talent with great potential and an eagerness to learn from every game.",
+  },
+  {
+    id: "reagan-onsongo",
+    name: "Reagan Onsongo",
+    elo: "1100",
+    tournaments: ["Jumuiya ya Afrika Mashariki Open Chess Tournament 2025 (3rd Edition)"],
+    achievements: ["Developing Player"],
+    bio: "An enthusiastic competitor eager to improve and grow through every match.",
   },
 ];
