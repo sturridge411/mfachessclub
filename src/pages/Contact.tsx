@@ -129,9 +129,10 @@ const ContactPage = () => {
 
                 <button
                   type="submit"
-                  className="w-full flex items-center justify-center gap-2 px-6 py-3 rounded-lg gold-gradient text-chess-dark font-semibold text-sm hover:opacity-90 transition-opacity"
+                  disabled={submitting}
+                  className="w-full flex items-center justify-center gap-2 px-6 py-3 rounded-lg gold-gradient text-chess-dark font-semibold text-sm hover:opacity-90 transition-opacity disabled:opacity-50"
                 >
-                  <Send size={16} /> Send Message
+                  <Send size={16} /> {submitting ? "Sending..." : "Send Message"}
                 </button>
               </form>
             )}
