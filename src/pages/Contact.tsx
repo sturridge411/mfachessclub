@@ -2,6 +2,8 @@ import { useState } from "react";
 import { motion } from "framer-motion";
 import { Mail, Send, CheckCircle } from "lucide-react";
 import Layout from "@/components/Layout";
+import { supabase } from "@/integrations/supabase/client";
+import { toast } from "sonner";
 
 const subjects = [
   "General Inquiry",
@@ -13,10 +15,24 @@ const subjects = [
 
 const ContactPage = () => {
   const [submitted, setSubmitted] = useState(false);
+  const [submitting, setSubmitting] = useState(false);
   const [form, setForm] = useState({ name: "", email: "", subject: subjects[0], message: "" });
 
-  const handleSubmit = (e: React.FormEvent) => {
+  const handleSubmit = async (e: React.FormEvent) => {
     e.preventDefault();
+    setSubmitting(true);
+
+    const { error } = await supabase.functions.invoke("send-notification", {
+      body: { type: "contact_message", data: form },
+    });
+
+    setSubmitting(false);
+
+    if (error) {
+      toast.error("Failed to send message. Please try again.");
+      return;
+    }
+
     setSubmitted(true);
   };
 
