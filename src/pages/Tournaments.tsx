@@ -222,7 +222,7 @@ const TournamentsPage = () => {
                             </thead>
                             <tbody>
                               <tr className="border-b border-border/50">
-                                <td className="px-3 py-2 font-medium text-foreground">Chess Presidency</td>
+                                <td className="px-3 py-2 font-medium text-foreground">Chess Presidency — 2026</td>
                                 <td className="px-3 py-2 text-amber-400 italic">TBD</td>
                                 <td className="px-3 py-2 hidden sm:table-cell">
                                   <span className="text-[10px] font-medium px-1.5 py-0.5 rounded-full bg-gold/20 text-gold border border-gold/30">Ongoing</span>

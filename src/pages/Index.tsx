@@ -276,7 +276,7 @@ const Index = () => {
                   </thead>
                   <tbody>
                     <tr className="border-b border-border/50 hover:bg-muted/20 transition-colors">
-                      <td className="px-4 py-3 font-medium text-foreground">Chess Presidency Battle</td>
+                      <td className="px-4 py-3 font-medium text-foreground">Chess Presidency — 2026</td>
                       <td className="px-4 py-3">
                         <span className="text-amber-400 italic">TBD</span>
                       </td>
