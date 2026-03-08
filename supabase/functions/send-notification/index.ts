@@ -59,7 +59,6 @@ serve(async (req) => {
       body: JSON.stringify({
         from: "MFA Chess Club <onboarding@resend.dev>",
         to: ["sturridge.omaido@mpesafoundationacademy.ac.ke"],
-        to: [adminEmail],
         subject,
         html,
       }),
