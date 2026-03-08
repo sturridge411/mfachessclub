@@ -1,9 +1,8 @@
 import { Link } from "react-router-dom";
 import { motion } from "framer-motion";
-import { Users, Calendar, Mail, Trophy, Award, Star, ExternalLink, Gamepad2, Crown, Swords, Clock, Zap } from "lucide-react";
+import { Users, Calendar, Mail, Trophy, Award, Star, Gamepad2 } from "lucide-react";
 import Layout from "@/components/Layout";
 import heroImage from "@/assets/hero-chess.jpg";
-import tiebreakerPoster from "@/assets/tiebreaker-poster.jpg";
 
 const chessplatforms = [
   { name: "ChessFriends", desc: "Play chess online with friends in real-time" },
