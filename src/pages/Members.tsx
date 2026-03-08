@@ -35,13 +35,19 @@ const MembersPage = () => {
 
     setSubmitting(true);
     const { error } = await supabase.from("player_submissions").insert({ name: trimmedName, elo: trimmedElo });
-    setSubmitting(false);
 
     if (error) {
+      setSubmitting(false);
       toast.error("Something went wrong. Please try again.");
       return;
     }
 
+    // Send email notification to admin
+    await supabase.functions.invoke("send-notification", {
+      body: { type: "player_submission", data: { name: trimmedName, elo: trimmedElo } },
+    });
+
+    setSubmitting(false);
     toast.success("Submitted! Your name will appear once approved by the admin.");
     setNewName("");
     setNewElo("");
