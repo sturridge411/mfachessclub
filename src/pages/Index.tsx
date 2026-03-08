@@ -134,7 +134,7 @@ const Index = () => {
             >
               <div className="flex items-center gap-2 mb-6">
                 <Crown size={18} className="text-gold" />
-                <h3 className="font-display text-xl font-bold text-foreground">Battle for the Chess Presidency</h3>
+                <h3 className="font-display text-xl font-bold text-foreground">Battle for the Chess Presidency — <span className="text-gold">2026</span></h3>
                 <span className="ml-auto text-xs font-medium px-2 py-0.5 rounded-full bg-gold/20 text-gold border border-gold/30 animate-pulse">Ongoing</span>
               </div>
 
@@ -276,7 +276,7 @@ const Index = () => {
                   </thead>
                   <tbody>
                     <tr className="border-b border-border/50 hover:bg-muted/20 transition-colors">
-                      <td className="px-4 py-3 font-medium text-foreground">Chess Presidency Battle</td>
+                      <td className="px-4 py-3 font-medium text-foreground">Chess Presidency — 2026</td>
                       <td className="px-4 py-3">
                         <span className="text-amber-400 italic">TBD</span>
                       </td>

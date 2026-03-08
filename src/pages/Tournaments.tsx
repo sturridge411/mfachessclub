@@ -99,6 +99,7 @@ const TournamentsPage = () => {
                       <div className="flex items-center gap-2 mb-1">
                         <Crown size={18} className="text-gold" />
                         <h3 className="font-display text-xl font-bold text-foreground">Battle for the Chess Presidency</h3>
+                        <span className="ml-auto text-xs font-medium px-2 py-0.5 rounded-full bg-gold/20 text-gold border border-gold/30">March 2026</span>
                       </div>
                       <p className="text-sm text-muted-foreground mb-6">Four players compete head-to-head — the winner becomes the new Chess Club President.</p>
 
@@ -221,7 +222,7 @@ const TournamentsPage = () => {
                             </thead>
                             <tbody>
                               <tr className="border-b border-border/50">
-                                <td className="px-3 py-2 font-medium text-foreground">Chess Presidency</td>
+                                <td className="px-3 py-2 font-medium text-foreground">Chess Presidency — 2026</td>
                                 <td className="px-3 py-2 text-amber-400 italic">TBD</td>
                                 <td className="px-3 py-2 hidden sm:table-cell">
                                   <span className="text-[10px] font-medium px-1.5 py-0.5 rounded-full bg-gold/20 text-gold border border-gold/30">Ongoing</span>
