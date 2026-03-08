@@ -102,6 +102,157 @@ const Index = () => {
         </div>
       </div>
 
+      {/* Presidential Tournament */}
+      <section className="py-20 bg-gradient-to-b from-background via-card to-background relative overflow-hidden">
+        {/* Decorative glow */}
+        <div className="absolute top-1/2 left-1/2 -translate-x-1/2 -translate-y-1/2 w-[600px] h-[600px] bg-gold/5 rounded-full blur-3xl pointer-events-none" />
+        
+        <div className="container mx-auto px-4 relative z-10">
+          <motion.div
+            initial={{ opacity: 0, y: 20 }}
+            whileInView={{ opacity: 1, y: 0 }}
+            viewport={{ once: true }}
+            className="text-center mb-10"
+          >
+            <div className="inline-flex items-center gap-2 px-4 py-1.5 rounded-full border border-gold/40 bg-gold/10 mb-4 animate-pulse">
+              <Crown size={14} className="text-gold" />
+              <span className="text-gold text-xs font-semibold uppercase tracking-wider">Live Tournament</span>
+            </div>
+            <h2 className="font-display text-3xl md:text-4xl font-bold text-foreground mb-2">
+              Battle for the <span className="text-gold-gradient">Chess Presidency</span>
+            </h2>
+            <p className="text-muted-foreground max-w-2xl mx-auto">
+              Four players compete head-to-head for the ultimate title — the new Chess Club President
+            </p>
+          </motion.div>
+
+          <div className="grid grid-cols-1 lg:grid-cols-2 gap-8 max-w-5xl mx-auto">
+            {/* Tournament Bracket */}
+            <motion.div
+              initial={{ opacity: 0, x: -30 }}
+              whileInView={{ opacity: 1, x: 0 }}
+              viewport={{ once: true }}
+              className="space-y-6"
+            >
+              {/* Semi-Final 1 */}
+              <div className="rounded-xl border border-border bg-card p-5">
+                <div className="flex items-center gap-2 mb-4">
+                  <Swords size={16} className="text-gold" />
+                  <span className="text-xs font-semibold uppercase tracking-wider text-gold">Semi-Final 1</span>
+                  <span className="ml-auto text-xs font-medium px-2 py-0.5 rounded-full bg-emerald-500/20 text-emerald-400 border border-emerald-500/30">Completed</span>
+                </div>
+                <div className="space-y-3">
+                  <div className="flex items-center justify-between p-3 rounded-lg bg-emerald-500/10 border border-emerald-500/30">
+                    <div className="flex items-center gap-3">
+                      <div className="w-8 h-8 rounded-full bg-gold/20 flex items-center justify-center">
+                        <Crown size={14} className="text-gold" />
+                      </div>
+                      <span className="font-semibold text-foreground">Marioo Sylvia</span>
+                    </div>
+                    <span className="text-xs font-bold px-2 py-1 rounded bg-emerald-500/20 text-emerald-400">WINNER</span>
+                  </div>
+                  <div className="flex items-center justify-between p-3 rounded-lg bg-muted/50 border border-border opacity-60">
+                    <div className="flex items-center gap-3">
+                      <div className="w-8 h-8 rounded-full bg-muted flex items-center justify-center">
+                        <span className="text-muted-foreground text-xs font-bold">RO</span>
+                      </div>
+                      <span className="font-semibold text-muted-foreground line-through">Reagan Onsongo</span>
+                    </div>
+                    <span className="text-xs font-medium px-2 py-1 rounded bg-destructive/20 text-destructive">FORFEIT</span>
+                  </div>
+                </div>
+                <p className="text-xs text-muted-foreground mt-3 italic">Marioo Sylvia advances to the finals after Reagan Onsongo forfeits.</p>
+              </div>
+
+              {/* Semi-Final 2 */}
+              <div className="rounded-xl border border-gold/30 bg-card p-5 ring-1 ring-gold/20 shadow-lg shadow-gold/5">
+                <div className="flex items-center gap-2 mb-4">
+                  <Zap size={16} className="text-gold" />
+                  <span className="text-xs font-semibold uppercase tracking-wider text-gold">Semi-Final 2 — Tiebreaker</span>
+                  <span className="ml-auto text-xs font-medium px-2 py-0.5 rounded-full bg-amber-500/20 text-amber-400 border border-amber-500/30 animate-pulse">Tomorrow</span>
+                </div>
+                <div className="space-y-3">
+                  <div className="flex items-center justify-between p-3 rounded-lg bg-gold/5 border border-gold/20">
+                    <div className="flex items-center gap-3">
+                      <div className="w-8 h-8 rounded-full bg-gold/20 flex items-center justify-center">
+                        <span className="text-gold text-xs font-bold">KD</span>
+                      </div>
+                      <span className="font-semibold text-foreground">King David Amani</span>
+                    </div>
+                    <span className="text-xs font-medium text-muted-foreground">½</span>
+                  </div>
+                  <div className="flex items-center justify-center">
+                    <span className="text-gold font-display font-bold text-sm">VS</span>
+                  </div>
+                  <div className="flex items-center justify-between p-3 rounded-lg bg-gold/5 border border-gold/20">
+                    <div className="flex items-center gap-3">
+                      <div className="w-8 h-8 rounded-full bg-gold/20 flex items-center justify-center">
+                        <span className="text-gold text-xs font-bold">SO</span>
+                      </div>
+                      <span className="font-semibold text-foreground">Sturridge Omaido</span>
+                    </div>
+                    <span className="text-xs font-medium text-muted-foreground">½</span>
+                  </div>
+                </div>
+                <div className="mt-4 flex items-center gap-4 text-xs text-muted-foreground">
+                  <span className="inline-flex items-center gap-1"><Clock size={12} /> Monday, 4:30 PM</span>
+                  <span className="inline-flex items-center gap-1"><Swords size={12} /> 25 min/player</span>
+                </div>
+                <p className="text-xs text-gold/80 mt-2 font-medium">First game ended in a draw — tiebreaker decides who faces Marioo in the finals!</p>
+              </div>
+
+              {/* Finals */}
+              <div className="rounded-xl border border-border bg-card p-5 border-dashed">
+                <div className="flex items-center gap-2 mb-4">
+                  <Trophy size={16} className="text-gold" />
+                  <span className="text-xs font-semibold uppercase tracking-wider text-gold">Finals — For the Presidency</span>
+                  <span className="ml-auto text-xs font-medium px-2 py-0.5 rounded-full bg-muted text-muted-foreground border border-border">Upcoming</span>
+                </div>
+                <div className="space-y-3">
+                  <div className="flex items-center justify-between p-3 rounded-lg bg-emerald-500/5 border border-emerald-500/20">
+                    <div className="flex items-center gap-3">
+                      <div className="w-8 h-8 rounded-full bg-gold/20 flex items-center justify-center">
+                        <Crown size={14} className="text-gold" />
+                      </div>
+                      <span className="font-semibold text-foreground">Marioo Sylvia</span>
+                    </div>
+                    <span className="text-xs text-emerald-400">SF1 Winner</span>
+                  </div>
+                  <div className="flex items-center justify-center">
+                    <span className="text-gold font-display font-bold text-sm">VS</span>
+                  </div>
+                  <div className="flex items-center justify-between p-3 rounded-lg bg-muted/30 border border-border border-dashed">
+                    <div className="flex items-center gap-3">
+                      <div className="w-8 h-8 rounded-full bg-muted flex items-center justify-center">
+                        <span className="text-muted-foreground text-xs">?</span>
+                      </div>
+                      <span className="font-semibold text-muted-foreground italic">Winner of SF2</span>
+                    </div>
+                  </div>
+                </div>
+                <p className="text-xs text-muted-foreground mt-3 italic">The winner becomes the new MFA Chess Club President.</p>
+              </div>
+            </motion.div>
+
+            {/* Poster */}
+            <motion.div
+              initial={{ opacity: 0, x: 30 }}
+              whileInView={{ opacity: 1, x: 0 }}
+              viewport={{ once: true }}
+              className="flex items-center justify-center"
+            >
+              <div className="rounded-xl overflow-hidden border border-gold/30 shadow-2xl shadow-gold/10 max-w-sm">
+                <img
+                  src={tiebreakerPoster}
+                  alt="Tiebreaker: King David Amani vs Sturridge Omaido — The Ultimate Showdown"
+                  className="w-full h-auto"
+                />
+              </div>
+            </motion.div>
+          </div>
+        </div>
+      </section>
+
       {/* Stats */}
       <section className="py-20 chess-pattern">
         <div className="container mx-auto px-4">
