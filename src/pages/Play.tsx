@@ -81,15 +81,6 @@ const Play = () => {
                 {p.name}
               </button>
             ))}
-            <a
-              href={currentPlatform.url}
-              target="_blank"
-              rel="noopener noreferrer"
-              className="inline-flex items-center gap-1.5 px-3 py-2 rounded-md border border-border text-muted-foreground hover:text-gold hover:border-gold/40 text-sm font-semibold transition-colors"
-            >
-              <ExternalLink size={14} />
-              <span className="hidden sm:inline">Open in</span> New Tab
-            </a>
             <button
               onClick={toggleFullscreen}
               className="inline-flex items-center gap-1.5 px-3 py-2 rounded-md border border-border text-muted-foreground hover:text-gold hover:border-gold/40 text-sm font-semibold transition-colors"
