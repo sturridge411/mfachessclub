@@ -97,6 +97,14 @@ export const members: Member[] = [
     bio: "An enthusiastic competitor eager to improve and grow through every match.",
   },
   {
+    id: "chris-koome",
+    name: "Chris Koome",
+    elo: "1050",
+    tournaments: [],
+    achievements: ["Club Member"],
+    bio: "A promising player with a sharp eye for tactics and a growing understanding of the game.",
+  },
+  {
     id: "wayne-kiptoo",
     name: "Wayne Kiptoo",
     elo: "900",
