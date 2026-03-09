@@ -112,4 +112,12 @@ export const members: Member[] = [
     achievements: ["Club Member"],
     bio: "A dedicated player who brings energy and enthusiasm to every game.",
   },
+  {
+    id: "cornelius-itute",
+    name: "Cornelius Itute",
+    elo: "600",
+    tournaments: [],
+    achievements: ["Club Member"],
+    bio: "A dedicated newcomer bringing fresh energy and determination to the club.",
+  },
 ];
