@@ -2,7 +2,6 @@ import { Link } from "react-router-dom";
 import { motion } from "framer-motion";
 import { Users, Calendar, Mail, Trophy, Award, Star, Gamepad2 } from "lucide-react";
 import Layout from "@/components/Layout";
-import heroImage from "@/assets/hero-chess.jpg";
 
 const chessplatforms = [
   { name: "ChessFriends", desc: "Play chess online with friends in real-time" },
@@ -33,8 +32,12 @@ const Index = () => {
       {/* Hero */}
       <section className="relative min-h-[90vh] flex items-center overflow-hidden">
         <div className="absolute inset-0">
-          <img src={heroImage} alt="MFA Chess Club students playing chess" className="w-full h-full object-cover" />
-          <div className="absolute inset-0 bg-gradient-to-r from-chess-dark/95 via-chess-dark/80 to-chess-dark/50" />
+          <img
+            src="https://images.pexels.com/photos/1040157/pexels-photo-1040157.jpeg?auto=compress&cs=tinysrgb&w=1920"
+            alt="Students playing chess at MFA Chess Club"
+            className="w-full h-full object-cover"
+          />
+          <div className="absolute inset-0 bg-gradient-to-r from-primary/90 via-primary/75 to-primary/50" />
         </div>
 
         <div className="relative container mx-auto px-4 py-20">
