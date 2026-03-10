@@ -1,9 +1,8 @@
 import { useState } from "react";
 import { motion, AnimatePresence } from "framer-motion";
-import { Calendar, MapPin, CheckCircle, Clock, ExternalLink, Crown, Swords, Zap, Trophy, Award, ChevronDown } from "lucide-react";
+import { Calendar, MapPin, CheckCircle, Clock, ExternalLink, Crown, Swords, Trophy, Award, ChevronDown } from "lucide-react";
 import Layout from "@/components/Layout";
 import { tournaments } from "@/data/tournaments";
-import tiebreakerPoster from "@/assets/tiebreaker-poster.jpg";
 
 const TournamentsPage = () => {
   const completed = tournaments.filter((t) => t.status === "completed");
