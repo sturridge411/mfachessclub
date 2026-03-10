@@ -162,14 +162,14 @@ const TournamentsPage = () => {
                         </div>
 
                         {/* Finals */}
-                        <div className="rounded-lg border border-border border-dashed bg-background p-4">
+                        <div className="rounded-lg border border-gold/30 bg-background p-4 ring-1 ring-gold/10">
                           <div className="flex items-center gap-2 mb-3">
                             <Trophy size={14} className="text-gold" />
                             <span className="text-xs font-semibold uppercase tracking-wider text-gold">Finals — For the Presidency</span>
-                            <span className="ml-auto text-xs font-medium px-2 py-0.5 rounded-full bg-muted text-muted-foreground border border-border">Upcoming</span>
+                            <span className="ml-auto text-xs font-medium px-2 py-0.5 rounded-full bg-amber-500/20 text-amber-400 border border-amber-500/30 animate-pulse">Upcoming</span>
                           </div>
                           <div className="space-y-2">
-                            <div className="flex items-center justify-between p-2.5 rounded-md bg-emerald-500/5 border border-emerald-500/20">
+                            <div className="flex items-center justify-between p-2.5 rounded-md bg-gold/5 border border-gold/20">
                               <div className="flex items-center gap-2">
                                 <div className="w-7 h-7 rounded-full bg-gold/20 flex items-center justify-center">
                                   <Crown size={12} className="text-gold" />
@@ -179,13 +179,14 @@ const TournamentsPage = () => {
                               <span className="text-xs text-emerald-400">SF1 Winner</span>
                             </div>
                             <div className="text-center text-gold font-display font-bold text-xs">VS</div>
-                            <div className="flex items-center justify-between p-2.5 rounded-md bg-muted/30 border border-border border-dashed">
+                            <div className="flex items-center justify-between p-2.5 rounded-md bg-gold/5 border border-gold/20">
                               <div className="flex items-center gap-2">
-                                <div className="w-7 h-7 rounded-full bg-muted flex items-center justify-center">
-                                  <span className="text-muted-foreground text-xs">?</span>
+                                <div className="w-7 h-7 rounded-full bg-gold/20 flex items-center justify-center">
+                                  <span className="text-gold text-[10px] font-bold">SO</span>
                                 </div>
-                                <span className="font-semibold text-sm text-muted-foreground italic">Winner of SF2</span>
+                                <span className="font-semibold text-sm text-foreground">Omaido Sturridge</span>
                               </div>
+                              <span className="text-xs text-emerald-400">SF2 Winner</span>
                             </div>
                           </div>
                           <p className="text-xs text-muted-foreground mt-3 italic">The winner becomes the new MFA Chess Club President.</p>

@@ -113,6 +113,14 @@ export const members: Member[] = [
     bio: "A dedicated player who brings energy and enthusiasm to every game.",
   },
   {
+    id: "miron-onsarigo",
+    name: "Miron Onsarigo",
+    elo: "Unrated (600)",
+    tournaments: [],
+    achievements: ["Club Member"],
+    bio: "A new addition to the club, Miron brings enthusiasm and a willingness to learn.",
+  },
+  {
     id: "cornelius-itute",
     name: "Cornelius Itute",
     elo: "Unrated (600)",
