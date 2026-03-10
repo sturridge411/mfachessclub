@@ -134,44 +134,30 @@ const TournamentsPage = () => {
                         </div>
 
                         {/* SF2 */}
-                        <div className="rounded-lg border border-gold/30 bg-background p-4 ring-1 ring-gold/10">
+                        <div className="rounded-lg border border-border bg-background p-4">
                           <div className="flex items-center gap-2 mb-3">
-                            <Zap size={14} className="text-gold" />
+                            <Swords size={14} className="text-gold" />
                             <span className="text-xs font-semibold uppercase tracking-wider text-gold">Semi-Final 2 — Tiebreaker</span>
-                            <span className="ml-auto text-xs font-medium px-2 py-0.5 rounded-full bg-amber-500/20 text-amber-400 border border-amber-500/30 animate-pulse">Tomorrow</span>
+                            <span className="ml-auto text-xs font-medium px-2 py-0.5 rounded-full bg-emerald-500/20 text-emerald-400 border border-emerald-500/30">Completed</span>
                           </div>
                           <div className="space-y-2">
-                            <div className="flex items-center justify-between p-2.5 rounded-md bg-gold/5 border border-gold/20">
+                            <div className="flex items-center justify-between p-2.5 rounded-md bg-muted/50 border border-border opacity-60">
+                              <div className="flex items-center gap-2">
+                                <div className="w-7 h-7 rounded-full bg-muted flex items-center justify-center">
+                                  <span className="text-muted-foreground text-[10px] font-bold">KD</span>
+                                </div>
+                                <span className="font-semibold text-sm text-muted-foreground line-through">King David Amani</span>
+                              </div>
+                            </div>
+                            <div className="flex items-center justify-between p-2.5 rounded-md bg-emerald-500/10 border border-emerald-500/30">
                               <div className="flex items-center gap-2">
                                 <div className="w-7 h-7 rounded-full bg-gold/20 flex items-center justify-center">
-                                  <span className="text-gold text-[10px] font-bold">KD</span>
+                                  <Crown size={12} className="text-gold" />
                                 </div>
-                                <span className="font-semibold text-sm text-foreground">King David Amani</span>
+                                <span className="font-semibold text-sm text-foreground">Omaido Sturridge</span>
                               </div>
-                              <span className="text-xs text-muted-foreground">½</span>
+                              <span className="text-xs font-bold px-2 py-0.5 rounded bg-emerald-500/20 text-emerald-400">WINNER</span>
                             </div>
-                            <div className="text-center text-gold font-display font-bold text-xs">VS</div>
-                            <div className="flex items-center justify-between p-2.5 rounded-md bg-gold/5 border border-gold/20">
-                              <div className="flex items-center gap-2">
-                                <div className="w-7 h-7 rounded-full bg-gold/20 flex items-center justify-center">
-                                  <span className="text-gold text-[10px] font-bold">SO</span>
-                                </div>
-                                <span className="font-semibold text-sm text-foreground">Sturridge Omaido</span>
-                              </div>
-                              <span className="text-xs text-muted-foreground">½</span>
-                            </div>
-                          </div>
-                          <div className="mt-3 flex items-center gap-3 text-xs text-muted-foreground">
-                            <span className="inline-flex items-center gap-1"><Clock size={11} /> Monday, 4:30 PM</span>
-                            <span className="inline-flex items-center gap-1"><Swords size={11} /> 25 min/player</span>
-                          </div>
-                          <p className="text-xs text-gold/80 mt-2 font-medium">First game drawn — tiebreaker decides who faces Marioo in the finals!</p>
-                        </div>
-
-                        {/* Poster */}
-                        <div className="flex justify-center py-2">
-                          <div className="rounded-lg overflow-hidden border border-gold/30 shadow-xl shadow-gold/10 max-w-[280px]">
-                            <img src={tiebreakerPoster} alt="Tiebreaker: King David vs Sturridge" className="w-full h-auto" />
                           </div>
                         </div>
 
