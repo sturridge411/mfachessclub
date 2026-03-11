@@ -33,7 +33,7 @@ const Index = () => {
       {/* Hero */}
       <section className="relative min-h-[90vh] flex items-center overflow-hidden">
         <div className="absolute inset-0">
-          <img src={heroImage} alt="MFA Chess Club students playing chess" className="w-full h-full object-cover" />
+          <img src={heroImage} alt="MFA Chess Club students playing chess" className="w-full h-full object-cover" style={{ transform: 'scaleX(-1)' }} />
           <div className="absolute inset-0 bg-gradient-to-r from-chess-dark/95 via-chess-dark/80 to-chess-dark/50" />
         </div>
 
