@@ -148,8 +148,8 @@ const Index = () => {
                 icon: Trophy,
               },
               {
-                title: "Perfect Score at Nationals",
-                desc: "Jones Kimutai Rop achieved a flawless 4/4 in the U17 Open category at the Kenya National Schools Championship.",
+                title: "Dominant National Performance",
+                desc: "MFA players delivered outstanding results at the Kenya National Schools Chess Championship.",
                 icon: Star,
               },
               {
