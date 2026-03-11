@@ -20,7 +20,7 @@ const stats = [
   { icon: Users, value: "10+", label: "Active Members" },
   { icon: Trophy, value: "1st", label: "Club Trophy 2025" },
   { icon: Award, value: "3", label: "National Qualifiers" },
-  { icon: Star, value: "4/4", label: "Perfect Score (U17)" },
+  { icon: Star, value: "18/18", label: "Regional Qualifiers" },
 ];
 
 const Index = () => {
