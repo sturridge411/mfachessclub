@@ -11,7 +11,7 @@ const chessplatforms = [
 
 const newsItems = [
   "🏆 MFA wins Best School/Club Trophy at Jumuiya ya Afrika Mashariki Open 2025!",
-  "⭐ Jones Kimutai Rop scores perfect 4/4 at National Schools U17 Championship!",
+  "⭐ MFA players dominate at National Schools Championship!",
   "🎯 All 18 MFA players qualify for nationals at Kiambu Regionals!",
   "♟️ Joseph Otieno, Sylvia Mario & Emanuel Kamau advance at Nationals!",
 ];
@@ -20,7 +20,7 @@ const stats = [
   { icon: Users, value: "10+", label: "Active Members" },
   { icon: Trophy, value: "1st", label: "Club Trophy 2025" },
   { icon: Award, value: "3", label: "National Qualifiers" },
-  { icon: Star, value: "4/4", label: "Perfect Score (U17)" },
+  { icon: Star, value: "18/18", label: "Regional Qualifiers" },
 ];
 
 const Index = () => {
@@ -148,8 +148,8 @@ const Index = () => {
                 icon: Trophy,
               },
               {
-                title: "Perfect Score at Nationals",
-                desc: "Jones Kimutai Rop achieved a flawless 4/4 in the U17 Open category at the Kenya National Schools Championship.",
+                title: "Dominant National Performance",
+                desc: "MFA players delivered outstanding results at the Kenya National Schools Chess Championship.",
                 icon: Star,
               },
               {
