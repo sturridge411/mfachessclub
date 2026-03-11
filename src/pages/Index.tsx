@@ -11,7 +11,7 @@ const chessplatforms = [
 
 const newsItems = [
   "🏆 MFA wins Best School/Club Trophy at Jumuiya ya Afrika Mashariki Open 2025!",
-  "⭐ Jones Kimutai Rop scores perfect 4/4 at National Schools U17 Championship!",
+  "⭐ MFA players dominate at National Schools Championship!",
   "🎯 All 18 MFA players qualify for nationals at Kiambu Regionals!",
   "♟️ Joseph Otieno, Sylvia Mario & Emanuel Kamau advance at Nationals!",
 ];
