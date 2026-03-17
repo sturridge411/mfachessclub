@@ -94,7 +94,7 @@ const TournamentsPage = () => {
                     transition={{ duration: 0.3 }}
                     className="overflow-hidden"
                   >
-                    <div className="rounded-xl border border-gold/30 bg-card/90 backdrop-blur-sm p-6 mb-6 shadow-lg shadow-gold/5">
+                    <div className="rounded-xl border border-gold/20 bg-card p-6 mb-6">
                       <div className="flex items-center gap-2 mb-1">
                         <Crown size={18} className="text-gold" />
                         <h3 className="font-display text-xl font-bold text-foreground">Battle for the Chess Presidency</h3>
